@@ -80,9 +80,9 @@ function playerRound(playerSelection, computerSelection) {
 //Use the previous function inside of this one to play a 5 round game using a for loop
 const game = () => {
   for (let i = 1; i <= 5; i++) {
-    computerSelection = computerPlay()
-    playerSelection = humanPlayer()
-    result = playerRound(playerSelection, computerSelection)
+    let computerSelection = computerPlay()
+    let playerSelection = humanPlayer()
+    let result = playerRound(playerSelection, computerSelection)
     console.log(result)
   }
 
