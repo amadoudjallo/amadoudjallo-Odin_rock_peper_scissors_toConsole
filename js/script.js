@@ -1,6 +1,6 @@
 //Global variable convert in integer that keeps score and reports a winner or loser at the end.
-const humanScore = parseInt(0);
-const computerScore = parseInt(0);
+let humanScore = parseInt(0);
+let computerScore = parseInt(0);
 
 // function called computerPlay that will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’.
 let computerPlay = () => {
@@ -79,12 +79,12 @@ function playerRound(playerSelection, computerSelection) {
 // NEW function called game().
 //Use the previous function inside of this one to play a 5 round game using a for loop
 const game = () => {
-  for (let i = 1; i <= 5; i++) {
+  for (let i = 1; i <= 2; i++) {
     const computer = computerPlay();
-    const player = humanPlayer();
+    const human = humanPlayer();
 
-    if (player !== false) {
-      console.log(playerRound(player, computer));
+    if (human !== false) {
+      console.log(playerRound(human, computer));
       console.log('Human score are:' + humanScore);
       console.log('Computer score are:' + computerScore);
     } else {
