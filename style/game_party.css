@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Poppins:wght@400;700&family=Quintessential&family=Roboto:ital,wght@0,700;0,900;1,400&display=swap');
+
+/* defaul style */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+img {
+  max-width: 100%;
+}
+
+.img {
+  width: 90px;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 15px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* en default */
+
+.header {
+  background: url('../images/photo-Markus_winker_unsplash.jpeg') no-repeat;
+  width: 100%;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.play_round {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.rounds_header {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px 0 30px;
+}
+
+.round_number {
+  color: #efdad7;
+}
+
+.players_section {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.player {
+  width: 600px;
+}
+
+.player > h2 {
+  padding: 50px 0 0;
+  margin-bottom: 8px;
+  font-size: 3rem;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.score {
+  background-color: #1572a1;
+  border: none;
+  border-radius: 8px;
+  color: #efdad7;
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  height: auto;
+  margin: 0 auto;
+  padding: 10px;
+  width: 200px;
+}
+
+.play_image {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 90px 0 0;
+  height: 280px;
+}
+
+.version {
+  margin: 30px 0;
+  height: 230px;
+  align-self: flex-end;
+}
+
+.version h2 {
+  background-color: #1572a1;
+  color: #efdad7;
+  font-size: 2.5rem;
+  font-family: 'Quintessential', cursive;
+  font-weight: 700;
+  padding: 10px 40px;
+  margin-left: 60px;
+}
+
+i.fa-robot {
+  color: #fff;
+  font-size: 100px;
+}
+
+/* guss of cumputer */
+.img_holder {
+  width: 90px;
+}
+
+.player > p {
+  color: #efdad7;
+  font-size: 2rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+}
+
+/* placehoder for win tie and loose */
+.placeholde_result {
+  color: #efdad7;
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0 auto;
+  text-transform: capitalize;
+  width: 300px;
+  font-family: 'Lato', sans-serif;
+}
+/* //////////////////////resul-aria////////////////////////// */
+div.container.result_page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  width: 100%;
+  border: 1px solid blue;
+}
+
+/* statut in js for getting result same as .player p */
+.statut {
+  color: #efdad7;
+  font-size: 4rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  margin-bottom: 40px;
+  font-family: 'Lato', sans-serif;
+}
+
+.final_score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #1572a1; */
+  padding: 10px 60px;
+  border-radius: 8px;
+}
+
+.final,
+.dotted {
+  font-size: 4rem;
+  font-weight: 700;
+  width: 100%;
+}
+
+.dotted {
+  font-weight: 400;
+  margin: 0 15px;
+}
+
+.get_start_btn {
+  display: inline-block;
+  padding: 20px 45px;
+  margin: 30px 0 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  background: #1572a1;
+  cursor: pointer;
+  width: 400px;
+}
+
+.get_start_btn a {
+  font-size: 3rem;
+  color: #efdad7;
+  font-weight: 700;
+}
+
+.get_conected {
+  padding: 0 0 25px;
+
+  width: 400px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.social_content {
+  display: flex;
+  padding: 10px 30px;
+  border-radius: 8px;
+  border: none;
+  color: #fff;
+}
+
+.fbook {
+  background-color: #0c1e7f;
+}
+
+.twitter {
+  background-color: #18bfff;
+}
+
+.social_content .icon {
+  padding-right: 5px;
+  font-size: 18px;
+}
+
+.social_content .text {
+  font-size: 18px;
+}
+
+.back {
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.back_home {
+  color: #efdad7;
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
