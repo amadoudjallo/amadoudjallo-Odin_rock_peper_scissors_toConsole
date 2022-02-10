@@ -94,4 +94,4 @@ const game = () => {
 
 }
 
-game();
+// game();
