@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Poppins:wght@400;700&family=Roboto:ital,wght@0,700;0,900;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Poppins:wght@400;700&family=Quintessential&family=Roboto:ital,wght@0,700;0,900;1,400&display=swap');
 
 /* defaul style */
 * {
@@ -64,6 +64,7 @@ ul {
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
+  font-family: 'Lato', sans-serif;
 }
 
 .img_content {
@@ -103,6 +104,7 @@ ul {
   font-size: 1.4rem;
   margin: 5px 0 20px;
   font-weight: 700;
+  font-family: 'Lato', sans-serif;
 }
 
 .header_intro.right {
@@ -169,4 +171,5 @@ ul {
 
 .social_content .text {
   font-size: 18px;
+  font-family: 'Lato', sans-serif;
 }

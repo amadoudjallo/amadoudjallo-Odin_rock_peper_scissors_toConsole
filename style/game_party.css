@@ -14,13 +14,15 @@ body {
   color: #fff;
 }
 
-img {
-  max-width: 100%;
+.img {
+  width: 60px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
-.img {
-  width: 90px;
-  cursor: pointer;
+.player_aria .img:hover {
+  /* width: 100px; */
+  transform: scale(1.6);
 }
 
 h1,
@@ -89,7 +91,7 @@ ul {
 .player > h2 {
   padding: 50px 0 0;
   margin-bottom: 8px;
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 400;
   text-transform: capitalize;
 }
@@ -114,16 +116,17 @@ ul {
   align-items: center;
   margin: 90px 0 0;
   height: 280px;
+  flex: 1 0 0;
 }
 
 .version {
   margin: 30px 0;
-  height: 230px;
+  height: 200px;
   align-self: flex-end;
 }
 
 .version h2 {
-  background-color: #1572a1;
+  /* background-color: #1572a1; */
   color: #efdad7;
   font-size: 2.5rem;
   font-family: 'Quintessential', cursive;
@@ -134,7 +137,27 @@ ul {
 
 i.fa-robot {
   color: #fff;
-  font-size: 100px;
+  font-size: 70px;
+}
+
+/* .play_image.computer_image_perso {
+  display: none;
+} */
+
+.r,
+.p,
+.s {
+  transform: scale(1.5);
+}
+
+.r {
+  display: none;
+}
+.p {
+  display: none;
+}
+.s {
+  display: none;
 }
 
 /* guss of cumputer */
@@ -145,7 +168,7 @@ i.fa-robot {
 .player > p,
 .first_title {
   color: #efdad7;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 400;
   text-transform: capitalize;
   margin-bottom: 5px;
@@ -165,7 +188,6 @@ i.fa-robot {
   text-transform: capitalize;
   font-family: 'Lato', sans-serif;
   margin: 25px auto 0;
-
   transition: all 0.3s ease;
   width: 590px;
 }
@@ -261,6 +283,7 @@ div.container.result_page {
 
 .social_content .text {
   font-size: 18px;
+  font-family: 'Lato', sans-serif;
 }
 
 .back {

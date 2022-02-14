@@ -6,7 +6,7 @@ let mainHeader = document.querySelector('.header');
 const human_score = document.querySelector('.human_score');
 const computer_score = document.querySelector('.computer_score');
 const round_number = document.querySelector('.round_number');
-const disply_image_conp = document.querySelector('.computer_aria');
+const disply_image_conp = document.querySelectorAll('.computer_aria');
 const resul_holder = document.querySelector('.horlder');
 const rock_img = document.querySelector('#r');
 const paper_img = document.querySelector('#p');
@@ -21,7 +21,35 @@ let paty = document.querySelector('#removed');
 let rsult = document.querySelector('.result_page');
 final_human_score = document.querySelector('.human');
 final_computer_score = document.querySelector('.computer');
+// result image for cumputer for choice
+let robot_image = document.querySelector('.robot_result')
+let rock = document.querySelector('.r')
+let paper = document.querySelector('.p')
+let scissors = document.querySelector('.s')
 
+
+// getting cuputer image to display
+function imageComp(choice) {
+
+  if (choice === 'rock') {
+    robot_image.replaceWith(rock);
+    rock.style.cssText = 'display:flex'
+    setTimeout(() => (rock.replaceWith(robot_image)), 800);
+  }
+  if (choice === 'paper') {
+    robot_image.replaceWith(paper);
+    paper.style.cssText = 'display:flex'
+    setTimeout(() => (paper.replaceWith(robot_image)), 800);
+  }
+  if (choice === 'scissors') {
+    robot_image.replaceWith(scissors);
+    scissors.style.cssText = 'display:flex'
+    setTimeout(() => (scissors.replaceWith(robot_image)), 800);
+  }
+}
+
+
+// after the 5times of playing 
 let endGame = function () {
   statut.textContent = resultFinal;
   final_human_score.textContent = humanScore;
@@ -30,15 +58,13 @@ let endGame = function () {
   rsult.style.cssText = 'display:flex';
 }
 
-// get the Winner,los
+// get  Winner
 function win(userChoice, computerChoice) {
   let w = `You Win!...${userChoice} beats ${computerChoice}🔥  `;
 
   result_LWT.textContent = w;
   result_LWT.classList.add('placeholde_result');
   result_LWT.style.cssText = 'color: #91C483;box-shadow: 0 0 0.6rem #91C483; ';
-
-
   humanScore++;
   human_score.textContent = humanScore;
   setTimeout(() => (result_LWT.textContent = ' '), 800);
@@ -48,6 +74,7 @@ function win(userChoice, computerChoice) {
   }
 }
 
+// get looser
 function loose(userChoice, computerChoice) {
   let l = `You Lose!...${userChoice} can't beats ${computerChoice}😈 `;
 
@@ -64,20 +91,27 @@ function loose(userChoice, computerChoice) {
   }
 }
 
+// get tie
 function tie(userChoice, computerChoice) {
   let t = `Tie!`;
-
   result_LWT.textContent = t;
   result_LWT.classList.add('placeholde_result');
   result_LWT.style.cssText = 'color: #FFC600; box-shadow: 0 0 0.6rem #FFC600; ';
   setTimeout(() => (result_LWT.textContent = ' '), 800);
+
 }
 
 // allpw to get rps selection for computer
 let computerMoove = function () {
+  let robot_image = document.querySelector('.robot_result')
+
+  // result_LWT.style.cssText = 'color: #FF6464; box-shadow: 0 0 0.6rem #FF6464; ';
+  // computerScore++;
+
   const choices = ['rock', 'paper', 'scissors'];
   const computerRandom = Math.floor(Math.random() * 3);
   let FinalChoice = choices[computerRandom];
+  imageComp(FinalChoice)
   return FinalChoice;
 }
 // alow to get rps slection on the ui
