@@ -1,97 +1,131 @@
-//Global variable convert in integer that keeps score and reports a winner or loser at the end.
 let humanScore = parseInt(0);
 let computerScore = parseInt(0);
+let round = parseInt(0);
+let finalResult = '';
+let mainHeader = document.querySelector('.header');
+const human_score = document.querySelector('.human_score');
+const computer_score = document.querySelector('.computer_score');
+const round_number = document.querySelector('.round_number');
+const disply_image_conp = document.querySelector('.computer_aria');
+const resul_holder = document.querySelector('.horlder');
+const rock_img = document.querySelector('#r');
+const paper_img = document.querySelector('#p');
+const scissors_img = document.querySelector('#s');
+const player_selection = document.querySelectorAll('#r,#p,#s');
+const holder = document.querySelector('.horlder');
+const result_LWT = document.querySelector('.jsHolder');
+// for result from here
+let statut = document.querySelector('.statut');
+let container = document.querySelector('.container#result');
+let paty = document.querySelector('#removed');
+let rsult = document.querySelector('.result_page');
+final_human_score = document.querySelector('.human');
+final_computer_score = document.querySelector('.computer');
 
-// function called computerPlay that will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’.
-let computerPlay = () => {
-  let computerMove = Math.floor(Math.random() * 3 + 1);
-  if (computerMove === 1) {
-    return 'rock';
-  } else if (computerMove === 2) {
-    return 'paper';
-  } else {
-    return 'scissors';
+let endGame = function () {
+  statut.textContent = resultFinal;
+  final_human_score.textContent = humanScore;
+  final_computer_score.textContent = computerScore;
+  paty.style.cssText = 'display:none';
+  rsult.style.cssText = 'display:flex';
+}
+
+// get the Winner,los
+function win(userChoice, computerChoice) {
+  let w = `You Win!...${userChoice} beats ${computerChoice}🔥  `;
+
+  result_LWT.textContent = w;
+  result_LWT.classList.add('placeholde_result');
+  result_LWT.style.cssText = 'color: #91C483;box-shadow: 0 0 0.6rem #91C483; ';
+
+
+  humanScore++;
+  human_score.textContent = humanScore;
+  setTimeout(() => (result_LWT.textContent = ' '), 800);
+  if (humanScore === 5) {
+    resultFinal = 'You Winn🔥';
+    endGame();
   }
 }
 
+function loose(userChoice, computerChoice) {
+  let l = `You Lose!...${userChoice} can't beats ${computerChoice}😈 `;
 
-// function called humanPlayer that will  get either ‘Rock’, ‘Paper’ or ‘Scissors’ from user imput then covert the input to lower case and return the result, i'm using the browser consol if the user clik or cancel its return false and a message will be console log.
-const humanPlayer = () => {
-  let humanMove = prompt('Play now: Rock, Peper or Scissors!');
+  result_LWT.textContent = l;
+  result_LWT.classList.add('placeholde_result');
+  result_LWT.style.cssText = 'color: #FF6464; box-shadow: 0 0 0.6rem #FF6464; ';
+  computerScore++;
+  computer_score.textContent = computerScore;
+  setTimeout(() => (result_LWT.textContent = ' '), 800);
 
-  if (humanMove === null) {
-    return false;
-  } else if (humanMove === '') {
-    return false;
-  } else {
-    return humanMove.toLowerCase();
+  if (computerScore === 5) {
+    resultFinal = 'You Loose😈 ';
+    endGame();
   }
 }
 
-//Write a function that plays a single round of Rock Paper Scissors
-//The function should take two parameters: playerSelectSion and computerSelection
-//Its return a string that declares the winner of the round like so: "You Lose! Paper beats Rock.
-function playerRound(playerSelection, computerSelection) {
+function tie(userChoice, computerChoice) {
+  let t = `Tie!`;
 
-  let win = `You Win! ${playerSelection} beats ${computerSelection} `;
-  let lose = `You Lose! ${playerSelection} can't beats ${computerSelection}`;
-  let tie = `Tie!`;
-
-  if (playerSelection === 'rock') {
-    if (computerSelection === 'rock') {
-      return tie;
-    } else if (computerSelection === 'paper') {
-      computerScore++;
-      return lose;
-    } else {
-      humanScore++;
-      return win;
-    }
-  }
-
-  if (playerSelection === 'paper') {
-    if (computerSelection === 'paper') {
-      return tie;
-    } else if (computerSelection === 'scissor') {
-      computerScore++;
-      return lose;
-    } else {
-      humanScore++;
-      return win;
-    }
-  }
-
-  if (playerSelection === 'scissors') {
-    if (computerSelection === 'scissors') {
-      return tie;
-    } else if (computerSelection === 'rock') {
-      computerScore++;
-      return lose;
-    } else if (computerSelection === 'paper') {
-      humanScore++;
-      return win;
-    }
-  }
-  return 'You sould only play: **rock paper or scissors**';
+  result_LWT.textContent = t;
+  result_LWT.classList.add('placeholde_result');
+  result_LWT.style.cssText = 'color: #FFC600; box-shadow: 0 0 0.6rem #FFC600; ';
+  setTimeout(() => (result_LWT.textContent = ' '), 800);
 }
 
+// allpw to get rps selection for computer
+let computerMoove = function () {
+  const choices = ['rock', 'paper', 'scissors'];
+  const computerRandom = Math.floor(Math.random() * 3);
+  let FinalChoice = choices[computerRandom];
+  return FinalChoice;
+}
+// alow to get rps slection on the ui
+let playerMoove = function () {
+  rock_img.addEventListener('click', function () {
+    round++;
+    round_number.textContent = round;
+    playerRound('rock');
+  })
 
-// NEW function called game().
-//Use the previous function inside of this one to play a 5 round game using a for loop
-const game = () => {
-  for (let i = 1; i <= 2; i++) {
-    const computer = computerPlay();
-    const human = humanPlayer();
+  paper_img.addEventListener('click', () => {
+    round++;
+    round_number.textContent = round;
+    playerRound('paper');
+  })
 
-    if (human !== false) {
-      console.log(playerRound(human, computer));
-      console.log('Human score are:' + humanScore);
-      console.log('Computer score are:' + computerScore);
-    } else {
-      console.log('See you next time!');
-    }
-  }
-
+  scissors_img.addEventListener('click', () => {
+    round++;
+    round_number.textContent = round;
+    playerRound('scissors');
+  })
 }
 
-// game();
+// both cumputer and player will be tested
+let playerRound = function (userChoice) {
+  const computerChoice = computerMoove();
+  if (userChoice === 'rock') {
+    if (computerChoice === 'rock') tie(userChoice, computerChoice);
+    if (computerChoice === 'paper') loose(userChoice, computerChoice);
+    if (computerChoice === 'scissors') win(userChoice, computerChoice);
+  }
+
+  if (userChoice === 'paper') {
+    if (computerChoice === 'paper') tie(userChoice, computerChoice);
+    if (computerChoice === 'scissors') loose(userChoice, computerChoice);
+    if (computerChoice === 'rock') win(userChoice, computerChoice);
+  }
+
+  if (userChoice === 'scissors') {
+    if (computerChoice === 'scissors') tie(userChoice, computerChoice);
+    if (computerChoice === 'rock') loose(userChoice, computerChoice);
+    if (computerChoice === 'paper') win(userChoice, computerChoice);
+  }
+}
+
+// all the event from here
+function main() {
+  playerMoove();
+}
+
+main();

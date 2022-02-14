@@ -57,7 +57,7 @@ ul {
 }
 
 .play_round {
-  padding: 20px 0;
+  padding: 10px 0 10px;
   text-align: center;
 }
 
@@ -66,7 +66,10 @@ ul {
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
-  padding: 10px 0 30px;
+  padding: 5px 0 30px;
+}
+.rounds_header.first_title {
+  font-size: 2rem;
 }
 
 .round_number {
@@ -139,42 +142,51 @@ i.fa-robot {
   width: 90px;
 }
 
-.player > p {
+.player > p,
+.first_title {
   color: #efdad7;
   font-size: 2rem;
   font-weight: 400;
   text-transform: capitalize;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
 }
+
+/* .jsHolder {
+  transform: scale(0.1);
+} */
 
 /* placehoder for win tie and loose */
 .placeholde_result {
   color: #efdad7;
-  font-size: 4rem;
-  font-weight: 700;
-  margin: 0 auto;
+  border-color: #f76e11;
+  box-shadow: 0 0 0.5rem #f76e11;
+  font-size: 2rem;
+  font-weight: 400;
   text-transform: capitalize;
-  width: 300px;
   font-family: 'Lato', sans-serif;
+  margin: 25px auto 0;
+
+  transition: all 0.3s ease;
+  width: 590px;
 }
 /* //////////////////////resul-aria////////////////////////// */
+
 div.container.result_page {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 70vh;
+  height: 100vh;
   width: 100%;
-  border: 1px solid blue;
 }
 
 /* statut in js for getting result same as .player p */
+
 .statut {
   color: #efdad7;
   font-size: 4rem;
   font-weight: 400;
   text-transform: capitalize;
-  margin-bottom: 40px;
   font-family: 'Lato', sans-serif;
 }
 
@@ -182,7 +194,7 @@ div.container.result_page {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: #1572a1; */
+
   padding: 10px 60px;
   border-radius: 8px;
 }

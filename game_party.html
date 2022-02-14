@@ -14,16 +14,17 @@
 
   <body>
     <header class="header">
-      <div class="container play_round">
-        <h1 class="rounds_header">round <span class="round_number">2</span></h1>
+      <div class="container play_round" id="removed">
+        <p class="first_title">Get 5 points and win the party</p>
+        <h1 class="rounds_header">round <span class="round_number">0</span></h1>
         <div class="players_section">
           <div class="player left">
             <h2>your score</h2>
-            <div class="score"><span class="score_number">0</span></div>
-            <div class="play_image left_aria">
-              <img src="./images/rock.svg" alt="" class="img rock" />
-              <img src="./images/paper.svg" alt="" class="img paper" />
-              <img src="./images/scissors.svg" alt="" class="img scissors" />
+            <div class="score"><span class="human_score">0</span></div>
+            <div class="play_image player_aria">
+              <img src="./images/rock.svg" alt="" class="img" id="r" />
+              <img src="./images/paper.svg" alt="" class="img" id="p" />
+              <img src="./images/scissors.svg" alt="" class="img" id="s" />
             </div>
             <p>Make your move</p>
           </div>
@@ -32,19 +33,57 @@
           </div>
           <div class="player right">
             <h2>robot score</h2>
-            <div class="score"><span class="score_number">0</span></div>
-            <div class="play_image right_aria">
+            <div class="score"><span class="computer_score">0</span></div>
+            <div class="play_image computer_aria">
               <i class="fas fa-robot robot_result"></i>
             </div>
-            <p>robot made a move</p>
+            <p>Waiting ...</p>
           </div>
         </div>
-        <!-- <div class="placeholder_aria_result">
-          <p></p>
-        </div> -->
+        <div class="horlder">
+          <p class="jsHolder"></p>
+        </div>
+      </div>
+      <!-----------------------------------result--------------------------------------->
+      <div class="container result_page" id="result">
+        <p class="statut"></p>
+        <div class="final_score">
+          <div class="final player_score">
+            <span class="human score_number">0</span>
+          </div>
+          <div class="dotted">:</div>
+          <div class="final computer_score">
+            <span class="computer score_number">0</span>
+          </div>
+        </div>
+        <div class="btn_result_page">
+          <button class="get_start_btn">
+            <a href="./game_party.html">play again</a>
+          </button>
+        </div>
+        <div class="get_conected">
+          <div class="social_content fbook">
+            <div class="icon fb"><i class="fab fa-facebook-f fb"></i></div>
+            <div class="text fb">
+              <a href="#">Facebook</a>
+            </div>
+          </div>
+
+          <div class="social_content twitter">
+            <div class="icon twt">
+              <i class="fab fa-twitter"></i>
+            </div>
+            <div class="text twt">
+              <a href="#">Twitter</a>
+            </div>
+          </div>
+        </div>
+        <div class="back">
+          <a href="./index.html" class="back_home">back home</a>
+        </div>
       </div>
     </header>
 
-    <!-- <script src="./js/script.js"></script> -->
+    <script src="./js/script.js"></script>
   </body>
 </html>
